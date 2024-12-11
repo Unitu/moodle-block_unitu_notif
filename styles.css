@@ -1,22 +1,22 @@
 /* Webkit-based browsers (Chrome, Safari) */
-.student-voice-wrapper::-webkit-scrollbar {
+.block_unitu_notif .student-voice-wrapper::-webkit-scrollbar {
     width: 8px;  /* Set the desired width */
 }
 
-.student-voice-wrapper::-webkit-scrollbar-thumb {
+.block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-thumb {
     background: #888;  /* Color of the scroll thumb */
     border-radius: 6px;  /* Rounded corners */
 }
 
-.student-voice-wrapper::-webkit-scrollbar-thumb:hover {
+.block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-thumb:hover {
     background: #555;  /* Color of the scroll thumb on hover */
 }
 
-.student-voice-wrapper::-webkit-scrollbar-track {
+.block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-track {
     background: #f1f1f1;  /* Color of the scroll track */
 }
 
-.student-voice-wrapper {
+.block_unitu_notif .student-voice-wrapper {
     scrollbar-width: thin;  /* Options: auto, thin, none */
     scrollbar-color: #888 #f1f1f1;  /* Color of the thumb and track */
     font-family: Arial, sans-serif;
@@ -27,132 +27,132 @@
     overflow-y: auto;
 }
 
-.post {
+.block_unitu_notif .post {
     padding: 5px 10px 5px 0px;
     border-bottom: 1px solid #dee2e6;
 }
 
-.post:last-child {
+.block_unitu_notif .post:last-child {
     border-bottom: none;
 }
 
-.post-header {
+.block_unitu_notif .post-header {
     display: flex;
 }
 
-.post-header img {
+.block_unitu_notif .post-header img {
     height: 30px;
     margin-right: 8px;
 }
 
-.post-header .details {
+.block_unitu_notif .post-header .details {
     display: flex;
     align-items: flex-start;
     flex: 1;
 }
 
-.post-header .name-role {
+.block_unitu_notif .post-header .name-role {
     display: flex;
     flex-direction: column;
 }
 
-.post-header .name-role h2 {
+.block_unitu_notif .post-header .name-role h2 {
     margin: 0;
     font-size: 12px;
 }
 
-.post-header .name-role span, .date {
+.block_unitu_notif .post-header .name-role span, .date {
     font-size: 12px;
     color: #777;
 }
 
-.department {
+.block_unitu_notif .department {
     color: #1d2125 !important;
 }
 
-.post-content {
+.block_unitu_notif .post-content {
     margin-top: 8px;
 }
 
-.post-content .postdetail {
+.block_unitu_notif .post-content .postdetail {
     margin-top: 8px;
     font-size: 12px;
 }
 
-.post-content h6 a{
+.block_unitu_notif .post-content h6 a{
     color: #1d2125 !important;
 }
 
-.post-footer {
+.block_unitu_notif .post-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.post-footer svg {
+.block_unitu_notif .post-footer svg {
     margin-right: 5px;
 }
-.post-footer .date {
+.block_unitu_notif .post-footer .date {
     margin-left: auto;
 }
 
-.footer {
+.block_unitu_notif .footer {
     margin-top: 8px;
     text-align: center;
     font-size: 12px;
     color: #777;
 }
 
-.footer img {    
+.block_unitu_notif .footer img {    
     height: 14px;
     width: 14px;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .container_section {
+    .block_unitu_notif .container_section {
         max-width: 100%;
         margin: 10px;
         padding: 10px;
     }
 
-    .post-header {
+    .block_unitu_notif .post-header {
         align-items: flex-start;
     }
 
-    .post-header .details {
+    .block_unitu_notif .post-header .details {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
     }
 
-    .post-header img {
+    .block_unitu_notif .post-header img {
         margin-bottom: 10px;
     }
 
-    .post-header .name-role {
+    .block_unitu_notif .post-header .name-role {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .post-header .name-role h2 {
+    .block_unitu_notif .post-header .name-role h2 {
         margin-bottom: 5px;
         font-size: 14px;
     }
 
-    .post-header .name-role span {
+    .block_unitu_notif .post-header .name-role span {
         font-size: 12px;
     }
 
-    .post-header .date {
+    .block_unitu_notif .post-header .date {
         font-size: 12px;
         margin-top: 5px;
     }
 
-    .post-content p {
+    .block_unitu_notif .post-content p {
         font-size: 14px;
     }
 
-    .post-header .name-role {
+    .block_unitu_notif .post-header .name-role {
         display: unset;
     }
 }
