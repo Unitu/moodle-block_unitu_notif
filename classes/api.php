@@ -65,15 +65,14 @@ class api {
         self::init();
         $plugin = \core_plugin_manager::instance()->get_plugin_info('block_unitu_notif');
         $release = str_replace("v", "", $plugin->release);
-        $moodle_v  = get_config('moodle', 'release');
+        $moodle_v = get_config('moodle', 'release');
         $version = explode(' ', $moodle_v)[0];
-        
+
         $curl = new \curl();
-        $url = 'https://api.unitu.co.uk/v1/public/TogetherWeChanged?vle=Moodle&vleVersion='.$version.'&pluginVersion='.$release;
+        $url = 'https://api.unitu.co.uk/v1/public/TogetherWeChanged?vle=Moodle&vleVersion=' . $version . '&pluginVersion=' .
+                $release;
         $key = self::$key;
-        $header = [
-        	'API-KEY: ' . $key,
-        ];
+        $header = ['API-KEY: ' . $key];
         $curl->setHeader($header);
         try {
             $result = $curl->get($url);

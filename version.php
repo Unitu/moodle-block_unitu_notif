@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024072201;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2022041900;        // Requires this Moodle version.
+$plugin->version = 2024072201;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires = 2022041900;        // Requires this Moodle version.
 $plugin->component = 'block_unitu_notif';// Full name of the plugin 
-$plugin->maturity  = MATURITY_STABLE; // Maturity level
-$plugin->release   = 'v1.0'; // Release name
+$plugin->maturity = MATURITY_STABLE; // Maturity level
+$plugin->release = 'v1.0'; // Release name

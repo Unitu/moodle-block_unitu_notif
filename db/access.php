@@ -25,18 +25,14 @@
 $capabilities = array(
         'block/unitu_notif:addinstance' => array(
                 'captype' => 'write',
-		        'contextlevel' => CONTEXT_SYSTEM,
-		        'archetypes' => array(
-		            'user' => CAP_ALLOW
-		        ),
+                'contextlevel' => CONTEXT_SYSTEM,
+                'archetypes' => array('user' => CAP_ALLOW),
                 'clonepermissionsfrom' => 'moodle/site:manageblocks'
         ),
         'block/unitu_notif:myaddinstance' => array(
-                'captype'      => 'read',
+                'captype' => 'read',
                 'contextlevel' => CONTEXT_SYSTEM,
-                'archetypes'   => array(
-                        'user' => CAP_ALLOW,
-                ),
+                'archetypes' => array('user' => CAP_ALLOW),
                 'clonepermissionsfrom' => 'moodle/my:manageblocks'
         ),
 );
