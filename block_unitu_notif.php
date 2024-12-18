@@ -21,7 +21,6 @@
  * @copyright  2024 Mahendra Soni <ms@taketwotechnologies.com> {@link https://taketwotechnologies.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class block_unitu_notif extends block_base {
 
     public function init() {
@@ -76,11 +75,11 @@ class block_unitu_notif extends block_base {
             $this->config = new stdClass();
         }
 
-        $this->content = new stdClass();        
+        $this->content = new stdClass();
         $posts = [];
 
         $contentdata = \block_unitu_notif\api::unitu_api();
-        if (isset($contentdata['error'])) {            
+        if (isset($contentdata['error'])) {
             return $this->content;
         }
         if (empty($contentdata)) {
@@ -92,33 +91,33 @@ class block_unitu_notif extends block_base {
             list($truncatedDescription, $isTruncated) = $this->truncate($item['Description'], 50);
             $departments = implode(' | ', $item['Departments']);
             if (mb_strlen($departments) > 80) {
-                $departments = mb_substr($departments, 0, 80). '..';
+                $departments = mb_substr($departments, 0, 80) . '..';
             } else {
                 $departments = $departments;
             }
             $posts[] = [
-                'userimage' => $item['Avatar'] ?: 'https://via.placeholder.com/40',
-                'username' => $item['FullName'],
-                'userrole' => $item['UniversityTitle'],
-                'date' => $item['DateSince'],
-                'title' => $item['Title'],
-                'content' => $truncatedDescription,
-                'fullcontent' => $item['Description'],
-                'readmorelink' => $isTruncated,
-                'likes' => $item['Likes'],
-                'url' => $item['Url'],
-                'departments' => $departments
+                    'userimage' => $item['Avatar'] ?: 'https://via.placeholder.com/40',
+                    'username' => $item['FullName'],
+                    'userrole' => $item['UniversityTitle'],
+                    'date' => $item['DateSince'],
+                    'title' => $item['Title'],
+                    'content' => $truncatedDescription,
+                    'fullcontent' => $item['Description'],
+                    'readmorelink' => $isTruncated,
+                    'likes' => $item['Likes'],
+                    'url' => $item['Url'],
+                    'departments' => $departments
             ];
         }
 
         $template_data = [
-            'posts' => $posts
+                'posts' => $posts
         ];
         $this->content->text = $OUTPUT->render_from_template('block_unitu_notif/notifications', $template_data);
         $image_url = new moodle_url('/blocks/unitu_notif/pix/unitu-logo.png');
-        $this->content->footer = 'Powered by <img src="'.$image_url.'" alt="Unitu Logo">
-        <a href="'.$universitydomain.'" target="_blank"> Unitu</a>';
-  
+        $this->content->footer = 'Powered by <img src="' . $image_url . '" alt="Unitu Logo">
+        <a href="' . $universitydomain . '" target="_blank"> Unitu</a>';
+
         return $this->content;
     }
 
