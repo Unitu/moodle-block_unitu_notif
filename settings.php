@@ -26,8 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configtext('block_unitu_notif/key',
-        get_string('key', 'block_unitu_notif'),
-        get_string('key_help', 'block_unitu_notif'),
-        '',
-        PARAM_TEXT));
+            get_string('key', 'block_unitu_notif'),
+            get_string('key_help', 'block_unitu_notif'),
+            '',
+            PARAM_TEXT));
 }

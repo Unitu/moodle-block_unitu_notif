@@ -1,24 +1,24 @@
 /* Webkit-based browsers (Chrome, Safari) */
 .block_unitu_notif .student-voice-wrapper::-webkit-scrollbar {
-    width: 8px;  /* Set the desired width */
+    width: 8px; /* Set the desired width */
 }
 
 .block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-thumb {
-    background: #888;  /* Color of the scroll thumb */
-    border-radius: 6px;  /* Rounded corners */
+    background: #888; /* Color of the scroll thumb */
+    border-radius: 6px; /* Rounded corners */
 }
 
 .block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555;  /* Color of the scroll thumb on hover */
+    background: #555; /* Color of the scroll thumb on hover */
 }
 
 .block_unitu_notif .student-voice-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;  /* Color of the scroll track */
+    background: #f1f1f1; /* Color of the scroll track */
 }
 
 .block_unitu_notif .student-voice-wrapper {
-    scrollbar-width: thin;  /* Options: auto, thin, none */
-    scrollbar-color: #888 #f1f1f1;  /* Color of the thumb and track */
+    scrollbar-width: thin; /* Options: auto, thin, none */
+    scrollbar-color: #888 #f1f1f1; /* Color of the thumb and track */
     font-family: Arial, sans-serif;
     background-color: #fff;
     margin: 0;
@@ -79,7 +79,7 @@
     font-size: 12px;
 }
 
-.block_unitu_notif .post-content h6 a{
+.block_unitu_notif .post-content h6 a {
     color: #1d2125 !important;
 }
 
@@ -88,9 +88,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .block_unitu_notif .post-footer svg {
     margin-right: 5px;
 }
+
 .block_unitu_notif .post-footer .date {
     margin-left: auto;
 }
@@ -102,7 +104,7 @@
     color: #777;
 }
 
-.block_unitu_notif .footer img {    
+.block_unitu_notif .footer img {
     height: 14px;
     width: 14px;
 }
