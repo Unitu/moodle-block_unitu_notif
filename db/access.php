@@ -18,7 +18,7 @@
  * Unitu Notification block capabilities.
  *
  * @package    block_unitu_notif
- * @copyright  2024 Mahendra Soni <ms@taketwotechnologies.com> {@link https://taketwotechnologies.com}
+ * @copyright  2024 Yacoub Badran <yacoub@unitu.co.uk> {@link https://unitu.co.uk}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

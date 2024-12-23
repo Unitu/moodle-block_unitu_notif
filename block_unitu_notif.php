@@ -18,14 +18,12 @@
  * Contains the class for the "Unitu Notification" block.
  *
  * @package    block_unitu_notif
- * @copyright  2024 Mahendra Soni <ms@taketwotechnologies.com> {@link https://taketwotechnologies.com}
+ * @copyright  2024 Yacoub Badran <yacoub@unitu.co.uk> {@link https://unitu.co.uk}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_unitu_notif extends block_base {
 
     public function init() {
-        global $CFG;
-
         $this->title = get_string('pluginname', 'block_unitu_notif');
     }
 
@@ -65,7 +63,7 @@ class block_unitu_notif extends block_base {
     }
 
     public function get_content() {
-        global $USER, $CFG, $OUTPUT;
+        global $OUTPUT;
 
         if ($this->content !== null) {
             return $this->content;

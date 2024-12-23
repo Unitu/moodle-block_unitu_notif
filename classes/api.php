@@ -19,7 +19,7 @@
  *
  * @package    block_unitu_notif
  * @subpackage unitu_notif
- * @copyright  2024 Mahendra Soni <ms@taketwotechnologies.com> {@link https://taketwotechnologies.com}
+ * @copyright  2024 Yacoub Badran <yacoub@unitu.co.uk> {@link https://unitu.co.uk}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -42,7 +42,6 @@ class api {
      * @return null
      */
     public static function init() {
-        global $CFG;
         self::$key = get_config('block_unitu_notif', 'key');
     }
 
@@ -58,8 +57,7 @@ class api {
     /**
      * Validate the api
      *
-     * @param Longtext $data data
-     * @return string
+     * @return array
      */
     public static function unitu_api() {
         self::init();
@@ -81,7 +79,7 @@ class api {
                 return ['error' => get_string('apikeywarning', 'block_unitu_notif')];
             }
             return $response;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return ['error' => get_string('warning', 'block_unitu_notif')];
         }
     }
