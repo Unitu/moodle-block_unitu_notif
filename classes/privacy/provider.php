@@ -13,25 +13,25 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 /**
- * Language file for block "Unitu Notification"
+ * Privacy
  *
  * @package    block_unitu_notif
+ * @subpackage unitu_notif
  * @copyright  2024 Yacoub Badran <yacoub@unitu.co.uk> {@link https://unitu.co.uk}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-$string['apikeywarning'] = 'Unauthorized access to Unitu Block API. Please check your API key.';
-$string['key'] = 'API Key';
-$string['key_help'] = 'Enter your API Key (LTI Secret value)';
-$string['nothingtodisplay'] = 'You have nothing to display';
-$string['pluginname'] = 'Together We Changed';
-$string['readmore'] = 'Read More';
-$string['readless'] = 'Read Less';
-$string['studentvoice'] = 'Student Voice';
-$string['togetherwechangeds'] = 'Together We Changed';
-$string['unitu_notif:addinstance'] = 'Add a Unitu Notification block';
-$string['unitu_notif:myaddinstance'] = 'Add a Unitu Notification block to Dashboard';
-$string['warning'] = 'API request failed.';
-$string['privacy:metadata'] = 'The Together We Changed block displays only the changes made at the University.';
+namespace block_unitu_notif\privacy;
+class provider implements
+    // This plugin does not store any personal user data.
+    \core_privacy\local\metadata\null_provider {
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason(): string {
+        return 'privacy:metadata';
+    }
+}
