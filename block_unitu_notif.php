@@ -15,7 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Contains the class for the "Unitu Notification" block.
+ * Defines the "Unitu Notification" block class that fetches and displays notifications from the Unitu API.
+ * The block provides configuration options, supports multiple instances, and renders a list of notifications
+ * with user details and post content.
  *
  * @package    block_unitu_notif
  * @copyright  2024 Yacoub Badran <yacoub@unitu.co.uk> {@link https://unitu.co.uk}
@@ -23,10 +25,18 @@
  */
 class block_unitu_notif extends block_base {
 
+    /**
+     * Initializes the block by setting the block's title from language strings.
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_unitu_notif');
     }
 
+    /**
+     * Allows multiple instances of this block to be added to a page.
+     *
+     * @return bool
+     */
     public function instance_allow_multiple() {
         return true;
     }
@@ -40,10 +50,20 @@ class block_unitu_notif extends block_base {
         return true;
     }
 
+    /**
+     * Allows the block instance to be configured.
+     *
+     * @return bool
+     */
     public function instance_allow_config() {
         return true;
     }
 
+    /**
+     * Specifies the page formats where this block is applicable.
+     *
+     * @return array
+     */
     public function applicable_formats() {
         return array(
                 'admin' => false,
@@ -54,6 +74,9 @@ class block_unitu_notif extends block_base {
         );
     }
 
+    /**
+     * Customizes the block's title based on configuration settings.
+     */
     public function specialization() {
         if (empty($this->config->title)) {
             $this->title = get_string('pluginname', 'block_unitu_notif');
@@ -62,6 +85,11 @@ class block_unitu_notif extends block_base {
         }
     }
 
+    /**
+     * Generates the content of the block by getting data from the Unitu API and formatting it.
+     *
+     * @return stdClass|null Content object with rendered data or null if no content is available.
+     */
     public function get_content() {
         global $OUTPUT;
 
@@ -94,7 +122,7 @@ class block_unitu_notif extends block_base {
                 $departments = $departments;
             }
             $posts[] = [
-                    'userimage' => $item['Avatar'] ?: 'https://via.placeholder.com/40',
+                    'userimage' => $item['Avatar'],
                     'username' => $item['FullName'],
                     'userrole' => $item['UniversityTitle'],
                     'date' => $item['DateSince'],
@@ -119,6 +147,13 @@ class block_unitu_notif extends block_base {
         return $this->content;
     }
 
+    /**
+     * Truncates a string to a specific number of words.
+     *
+     * @param string $text The text to truncate.
+     * @param int $max_words Maximum number of words to keep.
+     * @return array Truncated text and a boolean indicating if truncation occurred.
+     */
     private function truncate($text, $max_words) {
         $words = explode(' ', $text);
         if (count($words) > $max_words) {
